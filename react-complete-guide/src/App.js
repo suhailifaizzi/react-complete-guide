@@ -75,12 +75,21 @@ class App extends Component {
       style.backgroundColor = 'red';
     }
 
+    // let classes = ['red', 'bold'].join (' '); // Generate string of red and bold to assign to class
+    const classes = [];
+    if (this.state.persons.length <= 2) {
+      classes.push('red');
+    }
+    if (this.state.persons.length <= 1) {
+      classes.push('bold');
+    }
+
     // Adding parentheses, () on event Handler will make it trigger automatically upon rendering.
     // Without parentheses will pass reference only, hence not triggered until triggered.
     return (
       <div className="App">
         <h1>Hi, I am a React App.</h1>
-        <p>This is really working</p>
+        <p className={classes.join(' ')}>This is really working</p>
         <button
           style={style}
           onClick={this.togglePersonsHandler}>Switch Name</button>

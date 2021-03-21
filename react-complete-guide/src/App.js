@@ -48,12 +48,13 @@ class App extends Component {
   render() {
 
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer'
-    }
+    };
 
     let persons = null
 
@@ -70,6 +71,8 @@ class App extends Component {
           })}
         </div>
       );
+
+      style.backgroundColor = 'red';
     }
 
     // Adding parentheses, () on event Handler will make it trigger automatically upon rendering.
